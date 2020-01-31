@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summing numbers</title>
+    <style>
+        pr{
+            color: red;
+        }
+        body{
+            font: normal 18pt Arial;
+                       
+            background-color: darkslategray;
+            color:white ;
+        }
+        input{
+            font:oblique;
+            width: 100px;
+        }
+        div#res{
+            margin-top: 30px;
+            font: normal 18pt Arial;
+            font-style: italic;
+        }
+    
+    </style>
+</head>
+<body>
+    <input type="number" id="txtn1" name="txtn1" value=2 > +
+    <input type="number" id="txtn2" name="txtn2" value=3 >
+    <input type="button" id="btnsum" value="Sum" >
+    <div id='res'>
+
+    </div>
+    <script>
+        var b = window.document.getElementById('btnsum')
+        b.addEventListener('click',xsum)
+           
+        function xsum(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var r = window.document.getElementById('res')
+    
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            if (s > 0){
+                r.innerHTML =`   The sum between ${tn1.value} and ${tn2.value} is ${s}`
+            }
+            else{
+                r.innerHTML =`<pr>  The sum between ${tn1.value} and ${tn2.value} is ${s}</pr>`
+
+            }
+        }
+    </script>
+</body>
+</html>

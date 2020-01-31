@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using listeners</title>
+    <style>
+        input#txtnum{
+            width: 30px;
+        }
+        div#res{
+            background-color: black;
+            color: chartreuse;
+        }
+        
+    </style>
+</head>
+<body>
+    Type a number: <input type="number" name="txtnum" id="txtnum" value="5">
+    <input type="button" value="Fatorial" id="btnfat">
+    <input type="button" value="odd" id="btnodd">
+    <div id="res"></div>
+    <script>
+        let bfat=window.document.getElementById("btnfat")
+        let bodd=window.document.getElementById("btnodd")
+        bfat.addEventListener('click',vfat)
+        bodd.addEventListener('click',vodd)
+        function vfat(){
+            //window.alert('fat')
+            let r = window.document.getElementById('res')
+            let n = window.document.getElementById('txtnum')
+            rf = fat(Number(n.value))
+            r.innerHTML=`<p>The factorial of ${n.value} is ${rf}</p>`
+        }
+        function vodd(){
+            //window.alert('odd')
+            let r = window.document.getElementById('res')
+            let n = window.document.getElementById('txtnum')
+            rf = odd(Number(n.value))
+            r.innerHTML=`<p>The number ${n.value} is an ${rf}</p>`
+
+        }
+        function fat(n){
+            if (n<=1)
+                return n
+            else{
+                return n * fat(n-1)
+            }
+        }
+        function odd(n){
+            //window.alert('ozdd')
+            if (n%2==1)
+                return "Odd Number!!"
+            else
+                return "Even Number!!"
+        }
+    </script>
+</body>
+</html>

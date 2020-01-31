@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mostrar negativo em vermelho</title>
+    <input type="number" name="txtn" id="txtn">
+    <input type="button" value="Verificar" id="btnv" onclick="verif()" > 
+    <div id="res"></div>
+    <style>
+        pr{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        function verif(){
+            let t = window.document.getElementById("txtn")
+            let r = window.document.getElementById("res");
+            if (t.value=="0"){
+                r.innerHTML = "<p> Zero </p>"
+            }
+            if (Number(t.value)>0){            
+                r.innerHTML = "<p> Positivo </p>"
+            }
+            else{
+                r.innerHTML = "<pr> Negativo </pr>"
+
+            }
+
+        }
+    </script>
+
+    
+</body>
+</html>

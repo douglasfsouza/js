@@ -1,0 +1,5 @@
+var d = new Date()
+console.log(d.toString())
+console.log(d.getHours())
+console.log(d.getMinutes())
+console.log(d.getDate())

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using functions</title>
+    <style>
+        input{
+            width: 100px;
+        }
+        input#txtnum{
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    Informe um Nro: <input type="number" name="txtnum" id="txtnum" value="5">  
+    <input type="button" value="Fatorial" id ="btnfat">
+    <input type="button" value="Par ou Impar" id ="btnpar">
+    <div id="res">
+    
+    </div>
+    <script>
+        var btfat = window.document.getElementById('btnfat')
+        var btpar = window.document.getElementById('btnpar')
+        btfat.addEventListener('click',verificarfat)
+        btpar.addEventListener('click',verificarPar)
+        
+        function ParImpar(n){
+            if (n%2==0){
+                return "Par"
+            }else{
+                return "Impar"
+            }
+        }    
+        function verificarPar(){
+            let txnum = window.document.getElementById("txtnum");
+            let rf = ParImpar(Number(txnum.value));
+            let r= window.document.getElementById("res");
+            r.innerHTML=`<p>Este numero é ${rf}</p>`;
+        }  
+        function fatorial(n=0){
+            if (n==0)
+                return 0
+            else{
+                if (n==1){
+                    return 1
+                }else{
+                    return n * fatorial(n-1)
+                }
+            }
+        }
+        function verificarfat(){
+            //window.alert('tst')
+            let txnum = window.document.getElementById("txtnum");
+            let rf = fatorial(Number(txnum.value))
+            let r= window.document.getElementById("res");
+            r.innerHTML=`<p>O Fatorial deste numero é ${rf} </p>`;
+        }
+
+    </script>
+</body>
+</html>

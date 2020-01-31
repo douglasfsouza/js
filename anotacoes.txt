@@ -1,0 +1,44 @@
+watch in chromen -> extensão p/ refletir as alteracoes diretamente
+nodejs -> terminal js
+node exec -> para executar direto no node com f8
+se desabilitar o js da pagina perde recursos como preencher automatico,
+muda o layout da pagina. ex nao carrega tudo de uma vez,etc
+
+typeof(variaval)
+typeof 'teste'
+typeof 2
+tipos:
+  string
+  number
+  boolean
+  object
+  function
+  array
+
+ordem de precedencia dos operadores:
+()
+**
+* / %
++ -   
+
+
+
+operadores logicos nessa ordem:
+! - not
+&& - e
+|| - ou
+
+
+5 === 5 = true
+5 === '5' = false
+
+teste ? true : false
+
+var vel = 60.6
+so funciona com crase:
+`the velocity is ${vel} `
+
+Parametros opcionais:
+  function soma(var n1=0, var n2=0)
+  se nao passar n2 assume zero
+  

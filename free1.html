@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Another tes</title>
+    <style>
+        input#txtn1{
+            width: 30px;
+        }
+        p{
+            color: crimson;
+        }
+        div{
+            color:darkgreen
+        }
+        body{
+            
+            background-color:darkseagreen
+            
+        }
+    </style>
+</head>
+<body>
+    <p>Digite um nro par: <input type="text" name="txtn1" id="txtn1"> </p>
+    <div id=r1></div>
+    <input type="button" value="Verificar" id=btn1>
+    <script>
+        let b1 = window.document.getElementById('btn1')
+        b1.addEventListener('click',verificar)
+        function verificar(){
+            let rr1 = window.document.getElementById('r1')
+            let vn1 = window.document.getElementById('txtn1')
+            if (vn1.value=='')
+                rr1.innerHTML = `Vazio, informe um valor!`
+            else{
+                    
+                if (isNaN(vn1.value))
+                    rr1.innerHTML = `Informe um valor!`
+                else{
+                    
+                    if (Number(vn1.value)==0)
+                        rr1.innerHTML = `Zero!`
+                    else{              
+
+                        if ( Number(vn1.value) % 2 ==0)
+                            rr1.innerHTML = `<p> Este numero é par </p>`
+                        else{
+                            rr1.innerHTML = `O numero ${Number(vn1.value)} é impar `
+                        }
+                    }
+                }
+            }            
+        }
+    </script>
+</body>
+</html>

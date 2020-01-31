@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using listeners</title>
+    <style>
+    div#res{
+        font-size: 20px;
+        background-color: rgb(229, 190, 198);
+        height: 100px;
+        width: 100px;
+        margin-left: 100px;
+        margin-top: 100px;
+        padding-top: 30px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>    
+      <div id='res' >
+         Click here  
+    </div>
+    <script>
+        var r = window.document.querySelector('div#res')
+        
+        r.addEventListener('click',clicar)
+        r.addEventListener('mouseenter',entrar)
+        r.addEventListener('mouseout',sair)
+       
+        function clicar(){
+            r.innerHTML='Clicked!!!'
+            r.style.backgroundColor='blue'
+        
+        }
+        function entrar(){
+            r.innerHTML="Click here"
+            r.style.backgroundColor = 'green'
+        }
+        function sair(){
+            r.innerHTML="Click here"
+            r.style.backgroundColor='magenta'
+        }
+    </script>    
+</body>
+</html>

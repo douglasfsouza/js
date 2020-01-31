@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using DOM</title>
+    <style>
+        body{
+            color:cadetblue;
+            background-color: rgb(236, 179, 158);   
+        }
+    </style>
+</head>
+<body>
+    <p> Using <strong>DOM </strong> </p>
+    <div id = "msg">Click me</div>
+    <h1>Hello</h1>
+    <script>
+        var m = window.document.getElementById("msg");
+        m.style.backgroundColor='green'
+        var p = window.document.getElementsByTagName('p')[0];
+       // window.alert(p.innerText);
+       window.document.writeln(p.innerText);
+       window.document.write("<br>");
+       window.document.writeln(window.document.URL);
+       window.document.write("<br>");
+       window.document.write(window.navigator.appName);
+       window.document.write("<br>");
+       window.document.write(window.navigator.appVersion);
+       window.document.write("<br>");
+       var s ="tst";
+       window.document.writeln('->${s}')
+       window.open("http://www.google.com.br");
+
+       
+       
+
+
+    </script>
+</body>
+</html>

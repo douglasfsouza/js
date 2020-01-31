@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using Text as label</title>
+    <style>
+        input{
+            width: 40px;
+            color:green;
+        }
+        body{
+            background-color:darkcyan;
+            color:gold ;
+            cursor:context-menu;       }
+    </style>
+</head>
+<body>
+   
+   <style>
+       input{
+           width: 40px;
+       }
+   </style> 
+    <style>
+        input{
+            width: 40px;
+        }
+    </style>
+    <style>
+        input{
+            width: 40px;
+            cursor: pointer;            
+        }
+        input#txts{
+            width: 40px;
+            cursor:not-allowed;
+        }
+    </style>
+    <p>Number 1: <input type="number" name="txtn1" id="txtn1" onended="atu()" onchange="atu()" ></p>
+    <p>Number 2: <input type="number" name="txtn2" id="txtn2" onchange="atu()" onclick="atu()"></p>
+    <p>Sum: <input type="text" readonly="false" name="txts" id="txts"></p>
+    <div id ='r'>
+    </div>
+    <script>
+        function atu(){
+            let vr = window.document.getElementById('r')
+            let vs = window.document.getElementById('txts')
+            let vn1 = window.document.getElementById('txtn1')
+            let vn2 = window.document.getElementById('txtn2')
+            //vr.innerText = Number(vn1.value) + Number(vn2.value)
+            vs.value = Number(vn1.value) + Number(vn2.value)
+        } 
+    </script>
+    
+</body>
+</html>

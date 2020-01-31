@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Working with Date and switcht</title>
+    <style>
+        h3{
+            background-color: darkgreen;
+            color: yellow;
+        }
+        h4{
+            background-color: yellow;
+            color: green;
+        }
+        p{
+            color:indigo;
+            font: Arial;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var dtmNow = new Date()
+        var strs =""
+       // var strDate=dtmNow.getDay().toString() + "/" + dtmNow.getMonth().toString() + "/" + dtmNow.getFullYear().toString()
+        window.document.write(`<p> ${dtmNow.toString()}</p>`)
+        switch(dtmNow.getDay()){
+            case 0:
+                strs = 'Sunday'
+                break
+            case 1:
+                strs="Monday"
+                break
+            case 2:
+                strs="Tuesday"
+                break
+            case 3:
+                strs="Wednesday"
+                break
+            case 4:
+                strs="Thursday"
+                break
+            case 5:
+                strs="Friday"
+                break
+            case 6:
+                strs="Saturday"
+                break
+
+        }
+        window.document.write('<br>')
+        window.document.write(`<h3>Today is ${strs}</h3>`)
+        window.document.write(`<h4>Now is ${dtmNow.getHours()}:${dtmNow.getMinutes()}</h4>`)
+        window.document.write(`<h3>Day: ${dtmNow.getDate()} </h3>`)
+        window.document.write(`<h4>Month: ${dtmNow.getMonth()+1}</h4> `)
+        window.document.write(`<h3>Year: ${dtmNow.getFullYear()} </h3>`)
+    </script>
+    
+</body>
+</html>
