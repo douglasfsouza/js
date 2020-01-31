@@ -1,4 +1,4 @@
-watch in chromen -> extensão p/ refletir as alteracoes diretamente
+watch in chrome -> extensão p/ refletir as alteracoes diretamente
 nodejs -> terminal js
 node exec -> para executar direto no node com f8
 se desabilitar o js da pagina perde recursos como preencher automatico,
