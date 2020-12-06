@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Object></Object></title>
+</head>
+<body>
+    <input type="button" value="Use Object" id="btn">
+
+    
+</body>
+</html>
+<script>
+    let e = document.getElementById("btn");
+    e.addEventListener('click',verif);
+    let me = {};
+    me.name = "Doug"
+    me.age = function(){
+        let dH = new Date();
+        let anoH = dH.getFullYear();
+    
+        let a = anoH - 1977;
+        return a;
+    }
+    function verif(){
+        alert( `name=${me.name}, age=${me.age()}`);
+        let dH = new Date();
+        let anoH = dH.getFullYear();
+    
+        let a = anoH - 1977;
+
+        alert( `name=${me.name}, age=${a}`);
+
+    }
+</script>

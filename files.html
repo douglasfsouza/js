@@ -1,0 +1,30 @@
+<html>
+	<body>
+		<input type="file" id="theTextFile" />
+		<textarea id="theMessageArea" cols=40 rows=30> </textarea>
+	</body>
+	
+	<script>
+		let eFile = document.getElementById("theTextFile");
+        eFile.addEventListener("change",onLoadTextFile);
+        function onLoadTextFile(){
+			alert('I will load your file')
+			 if (eFile.files.length != 0 && eFile.files[0].type.match(/text.*/))
+			 {
+			     let reader = new FileReader();
+			     reader.onload=function(e){
+				     let eArea = document.getElementById("theMessageArea");
+				     eArea.value= e.target.result;
+			     };
+			     reader.onerror=function(e){
+				     alert("cannot load the file");
+			     };
+			     reader.readAsText(eFile.files[0],"ISO-8859-1");
+		     }
+			 else
+			 {
+			 	alert("please select a text file");
+			 }
+		}
+	</script>
+</html>

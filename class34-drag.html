@@ -1,0 +1,12 @@
+<html>
+	<body>
+		<div draggable='true' ondrag="hdrag(event)">
+			<b> some content</b> to be dragged </div>
+		<script>
+			function hdrag(event){
+				event.dataTransfer.effectAllowed="copy";
+				event.dataTransfer.setData("text/plain",event.target.innerHTML);
+			}
+		</script>
+	</body>
+</html>

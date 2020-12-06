@@ -1,0 +1,58 @@
+<html>
+<style>
+@keyframes ballmov{
+	0%{
+		margin-top: 0px;
+		margin-left: 0px;
+		background-color:yellow;
+	}
+	33%{
+		margin-top: 150px;
+		margin-left: 500px;
+		background-color:red;
+	}
+	66%{
+		margin-top: 200px;
+	    margin-left:  560px;
+		background-color:green;
+	}
+	100%{
+		margin-top: 300px;
+		margin-left: 360px;
+		background-color:purple;
+	}
+
+}
+.anim{
+	animation-name: ballmov ;
+	animation-delay: 3s;
+    animation-timing-function:linear; 
+    animation-fill-mode:both;
+}
+
+#ball{
+	
+	border-radius: 50px;
+}
+
+#balla{
+	border-radius: 50px;
+	margin-left: 90px;
+	margin-top: 90px;
+}
+
+div{
+	width : 200px;
+	height: 200px;
+	align-items: center;
+	background-color: red;
+}
+</style>
+	<body>
+		<div id="ball">
+			<input type="button" value="." id="balla" onclick="document.getElementById('ball').className='anim';") >	
+		</div>
+	</body>
+
+</html>
+

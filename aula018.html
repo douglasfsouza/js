@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP</title>
+</head>
+<body>
+    <input type="button" value="Login" id="btnLogin">
+    <div id="res"></div>
+    
+</body>
+</html>
+<script>
+    let blogin = document.getElementById("btnLogin");
+    blogin.addEventListener('click',()=>{
+        let url = 'https://sap.com.br:50000/b1s/v1/Login'
+        let json = {
+            'CompanyDB': 'HOMOLOGACAO',
+            'Password': 'Varsis@01',
+            'UserName': 'integrador'
+        }
+        //alert('login')
+        fetch(url,{
+            headers: {'content-type': 'application/json'},
+            method:'post',
+            mode: 'no-cors',
+            withCredentials: true,
+            body: JSON.stringify(json)
+        })
+        .then(r=> r.json())
+        .then(d =>{
+            debugger
+            alert('token:' + d.SessionId)
+        })
+    })
+</script>

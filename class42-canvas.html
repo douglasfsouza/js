@@ -1,0 +1,156 @@
+<html>
+<style>
+canvas{
+	border: 2px solid darkblue;
+	background-color: lightgreen;
+}
+</style>
+	<body>
+		<canvas id="mycan"> no canvas supported </canvas>
+		<canvas id="mycan2"> no canvas supported </canvas>
+		<canvas id="mycan3"> no canvas supported </canvas>
+		<canvas id="mycan4"> no canvas supported </canvas>
+		<canvas id="mycan5"> no canvas supported </canvas>
+		<img src="im.jpeg" id="wales" style="display:none;" />
+		<input type="button" id="b3" value="3">
+		<input type="button" id="b4" value="4">
+		<input type="button" id="b5" value="5">
+	</body>
+</html>
+<script>
+	let e3 = document.getElementById("b3")
+	let e4 = document.getElementById("b4")
+	let e5 = document.getElementById("b5")
+	e3.addEventListener('click',function(){
+        demoPattern()		
+	})
+	e4.addEventListener('click',function(){
+        demoRadialGradient()		
+	})
+	e5.addEventListener('click',function(){
+        demoLinearGradient()		
+	})
+	
+let can = document.getElementById("mycan")
+let can2 = document.getElementById("mycan2")
+const can3 = document.getElementById("mycan3")
+const can4 = document.getElementById("mycan4")
+const can5 = document.getElementById("mycan5")
+let con = can.getContext("2d")
+let con2 = can2.getContext("2d")
+const con3 = can3.getContext("2d")
+const con4 = can4.getContext("2d")
+const con5 = can5.getContext("2d")
+con.fillStyle="red"
+con.fillRect(20,20,can.width - 40, can.height - 40)
+con2.clearRect(0,0,can2.width,can2.height)
+con2.strokeStyle="rgb(0,0,255)"
+con2.fillStyle="rgba(255,0,0,0.75)"
+con2.beginPath()
+con2.moveTo(60,30)
+con2.lineTo(100,90)
+con2.lineTo(20,90)
+con2.closePath()
+con2.stroke()
+con2.fill()
+con3.lineWidth=5
+demoPattern()
+//alert("1")
+demoRadialGradient()
+//alert("2")
+
+demoLinearGradient()
+
+function demoPattern(){
+	const im = document.getElementById("wales")
+	const pat = con3.createPattern(im,"repeat")
+	drawShapes3(pat)
+}
+function demoRadialGradient(){
+	const rg = con4.createRadialGradient(can4.width/2,can4.height/2,10,can4.width/2, can4.height/2,100)
+	rg.addColorStop(0,"red")
+	rg.addColorStop(0.4,"yellow")
+	rg.addColorStop(1,"green")
+	drawShapes4(rg)
+}
+function demoLinearGradient(){
+	const lg = con5.createLinearGradient(0,0,0,can5.height)
+	lg.addColorStop(0,"red")
+	lg.addColorStop(0.4,"yellow")
+	lg.addColorStop(1,"green")
+	drawShapes5(lg)
+}
+
+function drawShapes3(st3){
+    con3.clearRect(0,0,can3.width,can3.height)
+	con3.fillStyle=st3
+	con3.strokeStyle="rgb(200,200,200)"
+	con3.beginPath()
+	con3.moveTo(70,30)
+	con3.lineTo(130,140)
+	con3.lineTo(10,140)
+	con3.closePath()
+	con3.fill()
+	con3.stroke()
+	con3.beginPath()
+    con3.arc(can3.width/2,can3.height/2,50,0,2 * Math.PI)
+	con3.fill()
+	con3.fillStyle="rgb(200,200,200)"
+	con3.strokeStyle=st3
+	con3.beginPath(230,30)
+	con3.lineTo(290,140)
+	con3.lineTo(170,140)
+	con3.closePath()
+	con3.fill()
+	con3.stroke()
+}
+function drawShapes4(st4){
+    con4.clearRect(0,0,can4.width,can4.height)
+	con4.fillStyle=st4
+	con4.strokeStyle="rgb(200,200,200)"
+	con4.beginPath()
+	con4.moveTo(70,30)
+	con4.lineTo(130,140)
+	con4.lineTo(10,140)
+	con4.closePath()
+	con4.fill()
+	con4.stroke()
+	con4.beginPath()
+    con4.arc(can4.width/2,can4.height/2,50,0,2 * Math.PI)
+	con4.fill()
+	con4.fillStyle="rgb(200,200,200)"
+	con4.strokeStyle=st4
+	con4.beginPath(230,30)
+	con4.lineTo(290,140)
+	con4.lineTo(170,140)
+	con4.closePath()
+	con4.fill()
+	con4.stroke()
+}
+function drawShapes5(st5){
+    con5.clearRect(0,0,can5.width,can5.height)
+	con5.fillStyle=st5
+	con5.strokeStyle="rgb(200,200,200)"
+	con5.beginPath()
+	con5.moveTo(70,30)
+	con5.lineTo(130,140)
+	con5.lineTo(10,140)
+	con5.closePath()
+	con5.fill()
+	con5.stroke()
+	con5.beginPath()
+    con5.arc(can5.width/2,can5.height/2,50,0,2 * Math.PI)
+	con5.fill()
+	con5.fillStyle="rgb(200,200,200)"
+	con5.strokeStyle=st5
+	con5.beginPath(230,30)
+	con5.lineTo(290,140)
+	con5.lineTo(170,140)
+	con5.closePath()
+	con5.fill()
+	con5.stroke()
+}
+
+
+</script>
+

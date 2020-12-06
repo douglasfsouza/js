@@ -1,0 +1,41 @@
+<html>
+	<body>
+		<input type="button" value="save" id="bsave">
+		<input type="button" value="load" id="bload">
+		<input type="button" value="remove" id="bremove">
+		<input type="button" value="clear" id="bclear">
+		<div id="r"> </div>
+	</body>
+</html>
+<script>
+	let es=document.getElementById("bsave")
+	let el=document.getElementById("bload")
+	let erm=document.getElementById("bremove")
+	let ec=document.getElementById("bclear")
+	let er=document.getElementById("r")
+    es.addEventListener("click",save)
+    el.addEventListener("click",load)
+    erm.addEventListener("click",remove)
+    ec.addEventListener("click",clear)
+    function save(){
+	    if (window.sessionStorage){
+	    sessionStorage.mykey="Doug saved here"
+	    }
+    }
+    function load(){
+	    if(window.sessionStorage){
+	   let v = sessionStorage.mykey
+	   er.innerText=v
+	    }
+    }
+    function remove(){
+	    sessionStorage.removeItem("mykey")}
+    function clear(){
+	    sessionStorage.clear()}
+
+</script>
+
+
+
+
+

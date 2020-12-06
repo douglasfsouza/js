@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape</title>
+    <style>
+        div#s{
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            transform: rotate(50deg);
+        }
+        div#c{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: lightcoral;
+        }
+        div#t{
+            width: 0;
+            height: 0;
+            border-top: 200px solid blue;
+            border-right: 200px  transparent solid;
+            background-color: green;
+            transform: skew(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="t"></div>
+    <div id="s"></div>
+    <div id="c"></div>
+    
+</body>
+</html>
+<script>
+    let cc = document.getElementById("s");
+    let v= 1;
+    cc.addEventListener('click',()=>{
+        //debugger
+        v +=10;
+        cc.style=`transform:rotate(${v}deg); margin-left:${v}px; ;`;
+        
+    })
+</script>

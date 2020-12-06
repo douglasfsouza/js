@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <style>
+        div{
+            border-style: double;
+            width: 100px;
+            height: 200px;     
+        }
+        body {
+               background-image: url('nemo.jpg');
+        }
+    </style>
+</head>
+<body>
+    <a href="wildhogs.html">
+        <img src="wildhogs.jpeg" alt="" width="100" height="200"/>
+    </a>
+
+    <video id="wildhogs"
+                src="wildhogs" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                poster="wildhogs.jpeg"
+                onclick="cliwildhogs()"
+                > 
+        </video>
+        <a href="guardians1.html">
+            <img src="guardians1.jpeg" alt="" width="100" height="200"/>
+        </a>
+    
+        <video id="guardians1"
+                src="guardians1" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="cliguardians1()"
+                poster = "guardians1.jpeg"> 
+        </video>
+        <a href="guardians2.html">
+            <img src="guardians2.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="guardians2"
+                src="guardians2" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="cliguardians2()"
+                poster="guardians2.jpeg"> 
+        </video>
+        <a href="conan1.html">
+            <img src="conan1.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="conan1" src="conan1" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="cliconan1()"
+                poster="conan1.jpeg"> 
+        </video>
+        <a href="enterthedragon.html">
+            <img src="enterthedragon.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="enterthedragon" src="enterthedragon" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clienterthedragon()"
+                poster="enterthedragon.jpeg"> 
+        </video>
+        <a href="hamselandgretel.html">
+            <img src="hamselandgretel.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="hamselandgretel" src="hamselandgretel" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clihamselandgretel()"
+                poster="hamselandgretel.jpeg"> 
+        </video>
+        <a href="fast1.html">
+            <img src="fast1.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="fast1" src="fast1" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clifast1()"
+                poster="fast1.jpeg"> 
+        </video>
+        <a href="fast2.html">
+            <img src="fast2.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="fast2" src="fast2" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clifast2()"
+                poster="fast2.jpeg"> 
+        </video>
+        <a href="alice.html">
+            <img src="alice.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="alice" src="alice" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clialice()"
+                poster="alice.jpeg"> 
+        </video>
+        <a href="thehobbit.html">
+            <img src="thehobbit.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="thehobbit" src="thehobbit" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clithehobbit()"
+                poster="thehobbit.jpeg"> 
+        </video>
+        <a href="houseofwax.html">
+            <img src="houseofwax.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="houseofwax" src="houseofwax" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                poster="houseofwax.jpeg"> 
+                onclick="clihouseofwax()"
+        </video>
+        <a href="ghostship.html">
+            <img src="ghostship.jpeg" alt="" width="100" height="200"/>
+        </a>
+       <video id="ghostship" src="ghostship" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clighostship()"
+                poster="ghostship.jpeg"> 
+        </video>
+        <a href="vanhelsing.html">
+            <img src="vanhelsin.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="vanhelsing" src="vanhelsing" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clivanhelsing()"
+                poster="vanhelsing.jpeg"> 
+        </video>
+        <a href="thehillshaveeyes.html">
+            <img src="thehillshaveeyes.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="thehillshaveeyes" src="thehillshaveeyes" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clithehillshaveeyes()"
+                poster="thehillshaveeyes.jpeg"> 
+        </video>
+        <a href="megashark.html">
+            <img src="megashark.jpeg" alt="" width="100" height="200"/>
+        </a>
+       <video id="megashark" src="megashark" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="climegashark()"
+                poster="megashark.jpeg"> 
+        </video>
+        <a href="sincity.html">
+            <img src="sincity.jpeg" alt="" width="100" height="200"/>
+        </a>
+       <video id="sincity" src="sincity" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clisincity()"
+                poster="sincity.jpeg"> 
+        </video>
+        <a href="driveangry.html">
+            <img src="driveangry.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="driveangry" src="driveangry" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clidriveangry()"
+                poster="driveangry.jpeg"> 
+        </video>
+        <a href="doom.html">
+            <img src="doom.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="doom" src="doom" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clidoom()"
+                poster="doom.jpeg"> 
+        </video>
+        <a href="shrek1.html">
+            <img src="shrek1.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="shrek1" src="shrek1" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                poster="shrek1.jpeg"
+                onplay="clishrek1()"
+                > 
+        </video>
+        <a href="shrek1eng.html">
+            <img src="shrek1eng" alt="" width="100" height="200"/>
+        </a>
+        <video id="shrek1eng" src="shrek1eng" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                poster="shrek1eng.jpeg"
+                onplay="clishrek1eng()"> 
+        </video>
+        <a href="mib3.html">
+            <img src="mib3.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="mib3" src="mib3" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="climib3()"
+                poster="mib3.jpeg"> 
+        </video>
+        <a href="trojan.html">
+            <img src="trojan.jpeg" alt="" width="100" height="200"/>
+        </a>
+        <video id="trojan" src="trojan" 
+                width = "100" 
+                height = "200"
+                controls="controls"
+                onclick="clitrojan()"
+                poster="trojan.jpeg"> 
+        </video>           
+
+
+</body>
+</html> 
+<script>
+    
+    function clishrek1(){
+        let el = document.getElementById('shrek1')
+        el.requestFullscreen();
+    }
+
+    function clishrek1eng(){
+        let el = document.getElementById('shrek1eng')
+        el.requestFullscreen();
+    }
+    function cliwildhogs(){
+        let el = document.getElementById('wildhogs')
+        el.requestFullscreen();
+    }
+    function cliguardians1(){
+        let el = document.getElementById('guardians1')
+        el.requestFullscreen();
+    }
+    function cliguardians2(){
+        let el = document.getElementById('guardians2')
+        el.requestFullscreen();
+    }
+    function cliconan1(){
+        let el = document.getElementById('conan1')
+        el.requestFullscreen();
+    }
+    function clienterthedragon(){
+        let el = document.getElementById('enterthedragon')
+        el.requestFullscreen();
+    }
+    function clihamselandgretel(){
+        let el = document.getElementById('hamselandgretel')
+        el.requestFullscreen();
+    }
+    function clifast1(){
+        let el = document.getElementById('fast1')
+        el.requestFullscreen();
+    }
+    function clifast2(){
+        let el = document.getElementById('fast2')
+        el.requestFullscreen();
+    }
+    function clialice(){
+        let el = document.getElementById('alice')
+        el.requestFullscreen();
+    }
+    function clithehobbit(){
+        let el = document.getElementById('thehobbit')
+        el.requestFullscreen();
+    }
+    function clihouseofwax(){
+        let el = document.getElementById('houseofwax')
+        el.requestFullscreen();
+    }
+    function clighostship(){
+        let el = document.getElementById('ghostship')
+        el.requestFullscreen();
+    }
+    function clivanhelsing(){
+        let el = document.getElementById('vanhelsin')
+        el.requestFullscreen();
+    }
+    function clithehillshaveeyes(){
+        let el = document.getElementById('thehillshaveeyes')
+        el.requestFullscreen();
+    }
+    function climegashark(){
+        let el = document.getElementById('megashark')
+        el.requestFullscreen();
+    }
+    function clisincity(){
+        let el = document.getElementById('sincity')
+        el.requestFullscreen();
+    }
+    function clidriveangry(){
+        let el = document.getElementById('driveangry')
+        el.requestFullscreen();
+    }
+    function clidoom(){
+        let el = document.getElementById('doom')
+        el.requestFullscreen();
+    }
+    function clitrojan(){
+        let el = document.getElementById('trojan')
+        el.requestFullscreen();
+    }
+    function clishrek1eng(){
+
+    }
+
+</script>

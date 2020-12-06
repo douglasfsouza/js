@@ -1,0 +1,23 @@
+<html>
+	<body>
+         <div id="st"></div>	
+	</body>
+</html>
+	<script>
+          var s
+          function onlineStatus(){
+		  s.innerHTML = "Online"}
+          function offlineStatus(){s.innerHTML = "Offline"}
+
+          onload=function(){
+s = document.getElementById("st")
+		  if (navigator.onLine){
+			  onlineStatus()}
+		  else{
+			  offlineStatus()}
+		  window.addEventListener("online",onlineStatus,true)
+		  window.addEventListener("offline",offlineStatus,true)
+	  }
+	</script>
+
+

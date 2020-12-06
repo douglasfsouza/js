@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<input ondragover="hdo(event)" ondrop="hdd(event)"/>
+		<input type="text"/>
+		<input type="text"/>
+
+	<script>
+		function hdo(event){
+			
+			event.stopPropagation();
+			event.preventDefault();
+			event.dataTransfer.dropEffect="copy";
+		}
+		function hdd(event){
+            debugger;
+			event.stopPropagation();
+			event.preventDefault();
+			event.target.innerHTML=e.dataTransfer.getData("text/plain");
+		}
+	</script>
+</html>

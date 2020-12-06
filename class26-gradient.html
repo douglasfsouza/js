@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        div#g{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            margin-left: 900px;
+            margin-top: 10px;
+            background:linear-gradient(30deg,lightblue, green, yellow);
+            transform:  translate(30px, 50px, 20px);
+            transform: scale3d(1,1,0.2);
+            transform: skew(14deg,13deg)
+        }
+        div#g2{
+            width: 400px;
+            height: 400px;
+            background:radial-gradient( red, rgb(25,55,44));
+            margin-top: 10px;
+            position:absolute;
+            transform: rotate(23deg);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="g"></div>
+    <div id="g2"></div>
+    
+</body>
+</html>
+<script>    
+    let i1 = document.getElementById("g");
+    let i2 = document.getElementById("g2");
+    
+    i1.addEventListener('click',()=>{
+        //debugger;
+        change();
+    });
+
+    i2.addEventListener('click',()=>{
+        //debugger;
+        change();
+    });
+
+    function change(){
+        if ( parseInt(i1.style.marginLeft) == 900)
+        {
+           i2.style="margin-left: 900px;";
+           i1.style="margin-left: 0px;";
+        }          
+
+        else
+        {
+           i2.style = "margin-left: 0px;";
+           i1.style = "margin-left: 900px;"; 
+        }
+    }
+</script>

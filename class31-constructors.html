@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="use constructor" id="btn">
+    
+</body>
+</html>
+<script>
+    let People = function(nam){
+            this.name = nam;
+        };
+    
+    let d = new People('Doug');
+    let a = new People('Andreia');
+    let m = new People('Math');
+
+    let e = document.getElementById('btn');
+    e.addEventListener('click',ver);
+    function ver(){
+        alert(`me:${d.name} and:${a.name}`);
+    }
+</script>

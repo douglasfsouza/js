@@ -1,0 +1,31 @@
+<html>
+	<body>
+		<input type="file" id="if"/>
+		<input type="image" id="ii"/>
+	</body>
+</html>
+<script>
+	let ef = document.getElementById("if");
+	let ei = document.getElementById("ii");
+	ef.addEventListener("change",loadimg);
+	function loadimg(){
+		if (ef.files.length !=0 && ef.files[0].type.match(/image.*/))
+		{
+			let fr = new FileReader();
+			
+			fr.onload=function(e)
+			{
+				ei.src=e.target.result;
+			}
+			fr.onerror=function(e){
+				alert("error loading img");
+			}
+			fr.readAsDataURL(ef.files[0]);
+		}
+		else
+		{
+			alert('select a image file');
+		}
+	}
+</script>
+

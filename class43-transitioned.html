@@ -1,0 +1,30 @@
+<html>
+<style>
+div{
+	width:400px;
+	height:60px;
+	background-color:yellow;
+	transition-property:width, height, font-size, background-color ;
+	transition-delay:1s;
+	transition-duration:2s, 4s,2s, 3750ms;
+	transition-timing-function:ease-in;
+}
+div:hover{
+	width:600px;
+	height:80px;
+	font-size: large;
+	background-color:red;
+}
+</style>
+	<body>
+		<div id="dtr"><p>Move the mouse or use your finger to transition</p></div>
+	</body>
+</html>
+	<script>
+		let ed=document.getElementById("dtr")
+ed.addEventListener("transitionend",onTrans,true)
+function onTrans(e){
+	alert("Changed the property: " + e.propertyName)
+	alert("In: " + e.elapsedTime + " seconds")
+}
+	</script>

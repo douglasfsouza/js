@@ -1,0 +1,82 @@
+<html>
+	<body>
+		<input type="button" value="open" id="bopen">
+		<input type="button" value="save" id="bsave">
+		<input type="button" value="load" id="bload">
+		<div id="r"> </div>
+	</body>
+</html>
+<script>
+	var db
+	
+
+	let eo=document.getElementById("bopen")
+	let es=document.getElementById("bsave")
+	let el=document.getElementById("bload")
+	let er=document.getElementById("r")
+    eo.addEventListener("click",open)
+    es.addEventListener("click",save)
+    el.addEventListener("click",load)
+	
+			
+    function save(){
+		var openRequest = indexedDB.open("dgDB")
+		openRequest.onsuccess=function(event){
+		    db=event.target.result
+			var clients=db.createObjectStore("clients",{keyPath:"id"})
+		    //var cli={
+			//         id:"1", 
+			//		 name:"doug"
+			//	    }
+		    //var addReq=clients.add(cli)
+		    //addReq.onsuccess=function(event){
+			//    alert("added successully")
+		    //}
+		    //addReq.onerror=function(event){
+			//    alert("error")
+		    //}
+	    }
+	    openRequest.onerror=function(event){
+		    alert("Error opening db :" + event.target.errorCode)
+	    }
+
+		
+		
+	    
+	    
+    }
+    function load(){
+	   let v = sessionStorage.getItem("mykey")
+	   er.innerText=v
+    }
+    function open(){
+	    var db
+	    var openRequest = indexedDB.open("dgDB")
+	    openRequest.onsuccess=function(event){
+		    db=event.target.result
+			//alert('OPEN')
+			var clients=db.createObjectStore("clients",{keyPath:"id"})
+		    let cli={
+			         id:"1", 
+					 name:"doug"
+				    }
+		    var addReq=clients.add(cli)
+			addReq.onsuccess=function(event){
+			    alert("added successully")
+		    }
+		    addReq.onerror=function(event){
+			    alert("error")
+		    }
+	    }
+	    openRequest.onerror=function(event){
+		    alert("Error opening db :" + event.target.errorCode)
+	    }
+	}
+
+
+</script>
+
+
+
+
+

@@ -1,0 +1,38 @@
+<html>
+<style>
+div{
+	width:400px;
+	height:60px;
+	background-color:yellow;
+	transition-property:width, height, font-size, background-color ;
+	transition-delay:1s;
+	transition-duration:2s, 4s,2s, 3750ms;
+	transition-timing-function:ease-in;
+}
+div:hover{
+	width:600px;
+	height:80px;
+	font-size: large;
+	background-color:red;
+}
+</style>
+	<body onload="onLoad()">
+		<div id="dtr"><p>Move the mouse or use your finger to transition</p></div>
+		<div> other div </div>
+		<select id="messages"></select>
+	</body>
+</html>
+<script>
+let me=document.querySelector("messages")
+
+function onTrans(e){
+	messages.add(new Option("Changed the property: " + e.propertyName +
+" In: " + e.elapsedTime + " seconds"))
+}
+function onLoad(){
+	let de=document.querySelectorAll("div")
+	for(let i=0;i < de.length;i++){
+		de[i].addEventListener("transitionend",onTrans,true)
+	}
+}
+	</script>

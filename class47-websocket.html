@@ -1,0 +1,66 @@
+<html>
+	<body>
+		<input type="button" id="btnOpen" value="Open connection">
+		<input type="button" id="btnClose" value="Close">
+		<input type="button" id="btnVerify" value="Verify">
+		<input type="button" id="btnSend" value="Send Msg">
+		Send File:<input type="file" id="btnFile" value="Send File">
+	</body>
+</html>
+<script>
+let eOpen=document.getElementById("btnOpen")
+let eClose=document.getElementById("btnClose")
+let eVerify=document.getElementById("btnVerify")
+let eSend=document.getElementById("btnSend")
+let eSendFile=document.getElementById("btnFile")
+var ws = new WebSocket("wss://javascript.info/article/websocket/demo/hello")
+//ws.close()
+eSendFile.addEventListener("change",function(){
+	if (eSendFile.files.length !=0 ){
+		ws.send(eSendFile.files[0])
+		alert('send')
+	}
+	   
+})
+eSendFile.addEventListener("click",function(){
+	//let file=document.querySelector("input[type='file']").files[0]
+	ws.send(btnFile)
+})
+eSend.addEventListener("click",function(){
+	let msg="Hello"
+	ws.send(msg)
+})
+eVerify.addEventListener("click",function(){
+	if (window.WebSocket)
+		alert("WebSocket supported")
+	else
+		alert("WebSocket not supported")
+})
+eOpen.addEventListener("click",function(){
+  //var ws = new WebSocket("ws://websocketserver.contoso.com/bookings")
+ ws = new WebSocket("wss://javascript.info/article/websocket/demo/hello")
+  
+})
+ws.onerror=function(e){
+	alert("error:" + e.data)
+}
+ws.onclose=function(e){
+	if(e.wasClean)
+		alert("closed ok")
+	else
+		alert("error to close. err: " + e.code)
+}
+
+ws.onopen=function(){
+		alert("The connection is open")
+}
+
+eClose.addEventListener("click",function(){
+	ws.close()
+})
+
+ws.addEventListener("open",function(){
+	alert('open, verify with listener')
+})
+
+</script>

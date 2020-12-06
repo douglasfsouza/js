@@ -1,0 +1,84 @@
+<html>
+<style>
+canvas{
+	border: 2px solid darkblue;
+	background-color: lightgreen;
+}
+</style>
+	<body>
+		<canvas id="mycan"> no canvas supported </canvas>
+		<canvas id="mycan2"> no canvas supported </canvas>
+		<canvas id="mycan3"> no canvas supported </canvas>
+		<img src="im.jpeg" id="wales" style="display:none;" />
+	</body>
+
+</html>
+	<script>
+let can = document.getElementById("mycan")
+let can2 = document.getElementById("mycan2")
+let can3 = document.getElementById("mycan3")
+let con = can.getContext("2d")
+let con2 = can2.getContext("2d")
+let con3 = can3.getContext("2d")
+con.fillStyle="red"
+con.fillRect(20,20,can.width - 40, can.height - 40)
+
+con2.clearRect(0,0,can2.width,can2.height)
+con2.strokeStyle="rgb(0,0,255)"
+con2.fillStyle="rgba(255,0,0,0.75)"
+con2.beginPath()
+con2.moveTo(60,30)
+con2.lineTo(100,90)
+con2.lineTo(20,90)
+con2.closePath()
+con2.stroke()
+con2.fill()
+con3.lineWidth=5
+//demoLinearGradient()
+//demoRadialGradient()
+demoPattern()
+function demoPattern(){
+	const im = document.getElementById("wales")
+	const pat = con3.createPattern(im,"repeat")
+	drawShapes(pat)
+}
+function demoRadialGradient(){
+	const rg = con3.createRadialGradient(can3.width/2,can3.height/2,10,can3.width/2, can3.height/2,100)
+	rg.addColorStop(0,"red")
+	rg.addColorStop(0.4,"yellow")
+	rg.addColorStop(1,"green")
+	drawShapes(rg)
+}
+function demoLinearGradient(){
+	const lg = con3.createLinearGradient(0,0,0,can3.height)
+	lg.addColorStop(0,"red")
+	lg.addColorStop(0.4,"yellow")
+	lg.addColorStop(1,"green")
+	drawShapes(lg)
+}
+function drawShapes(st){
+con3.clearRect(0,0,can3.width,can3.height)
+	con3.fillStyle=st
+	con3.strokeStyle="rgb(200,200,200)"
+	con3.beginPath()
+	con3.moveTo(70,30)
+	con3.lineTo(130,140)
+	con3.lineTo(10,140)
+	con3.closePath()
+	con3.fill()
+	con3.stroke()
+	con3.beginPath()
+        con3.arc(can3.width/2,50,0,2*Math.PI)
+	con3.fill()
+	con3.fillStyle="rgb(200,200,200)"
+	con3.strokeStyle=st
+	con3.beginPath(230,30)
+	con3.lineTo(290,140)
+	con3.lineTo(170,140)
+	con3.closePath()
+	con3.fill()
+	con3.stroke()
+}
+
+	</script>
+

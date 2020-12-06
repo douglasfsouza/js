@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Init" id="binit">
+    <div id="Profile" ></div>
+    <div id="Appointments" ></div>
+    
+</body>
+</html>
+<script>
+
+    let einit = document.getElementById('binit');
+    einit.addEventListener('click',init);
+
+var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
+var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
+
+var Main = {};
+Main.indexedDB = {};
+Main.indexedDB.db = null;
+
+Main.indexedDB.onerror = function(e) {
+console.log(e);
+};
+
+function init() {
+Main.indexedDB.open();
+Main.indexedDB.getAllDetails();
+}
+
+Main.indexedDB.open = function () {
+var request = indexedDB.open("DBV1",2);
+
+//If no db exists or if the database is behind on versions then it will update.
+//Though FF is the only browser atm that supports this method.
+request.onupgradeneeded = function (e) {
+console.log("Running UpgradeNeeded");
+Main.indexedDB.db = e.target.result;
+var thisDb = Main.indexedDB.db;
+
+thisDb.onerror = function (e) {
+alert("Sorry, an unforseen error was thrown.");
+console.log("***ERROR***");
+console.dir(e.target);
+};
+
+if (!thisDb.objectStoreNames.contains("Profile")) {
+console.log("I need to make the Profile object store.");
+thisDb.createObjectStore("Profile", { keyPath: "UserId", autoIncrement: true });
+}
+if (!thisDb.objectStoreNames.contains("Appointments")) {
+console.log("I need to make the Appointments object store.");
+thisDb.createObjectStore("Appointments", { keyPath: "AppointmentId", autoIncrement: true });
+
+}
+if (!thisDb.objectStoreNames.contains("Assignment")) {
+console.log("I need to make the Assignment object store.");
+var objectStore = thisDb.createObjectStore("Assignment", { keyPath: "AssignementId", autoIncrement: true });
+
+}
+}; //End-UpgradeNeeded
+
+//To make this compatible with Chrome, the onsuccess method must be used.
+request.onsuccess = function (e) {
+console.log("This was successful.");
+
+Main.indexedDB.db = e.target.result;
+var thisDb = Main.indexedDB.db;
+
+thisDb.onerror = function (e) {
+alert("Sorry, an unforseen error was thrown.");
+console.log("***ERROR***");
+console.dir(e.target);
+};
+
+if (!thisDb.objectStoreNames.contains("Profile")) {
+console.log("I need to make the Profile object store.");
+thisDb.createObjectStore("Profile", { keyPath: "UserId", autoIncrement: true });
+}
+else{
+
+}
+if (!thisDb.objectStoreNames.contains("Appointments")) {
+console.log("I need to make the Appointments object store.");
+thisDb.createObjectStore("Appointments", { keyPath: "AppointmentId", autoIncrement: true });
+
+}
+else{
+
+}
+if (!thisDb.objectStoreNames.contains("Assignment")) {
+console.log("I need to make the Assignment object store.");
+thisDb.createObjectStore("Assignment", { keyPath: "AssignementId", autoIncrement: true });
+
+}
+else{
+
+}
+
+
+}; //End-onsuccess
+
+request.onerror = function (e) {
+
+alert("Sorry, an unforseen error was thrown.");
+console.log("***ERROR***");
+console.dir(e.target);
+
+};
+
+
+}; //End-OpenFunction
+
+Main.indexedDB.addDetails = function (ProfName, AppointName) {
+var db = Main.indexedDB.db;
+
+console.log("Before Prof");
+var transProf = db.transaction(["Profile"], "readwrite");
+var storeProf = transProf.objectStore("Profile");
+
+console.log("Before Appo");
+var transAppo = db.transaction(["Appointments"], "readwrite");
+var storeAppo = transAppo.objectStore("Appointments");
+
+var dataProf = {
+"text": ProfName
+};
+
+var dataAppo = {
+"text": AppointName
+};
+
+var requestProf = storeProf.put(dataProf);
+requestProf.onsuccess = function (e) {
+console.log("Prof data successfully entered.");
+};
+requestProf.onerror = function (e) {
+console.log(e);
+};
+var requestAppo = storeAppo.put(dataAppo);
+requestAppo.onsuccess = function (e) {
+console.log("Appo data successfully entered.");
+};
+requestAppo.onerror = function (e) {
+console.log(e);
+};
+}; //End-AddDetails
+
+function addDetails() {
+var Prof = document.getElementById("ProfileName");
+var Appo = document.getElementById("AppointmentName");
+Main.indexedDB.addDetails(Prof.value, Appo.value);
+Main.indexedDB.getAllDetails();
+};
+
+Main.indexedDB.getAllDetails = function () {
+console.log("Get all called.");
+var Prof = document.getElementById("Profile");
+Prof.innerHTML = "";
+var Appo = document.getElementById("Appointments");
+Appo.innerHTML = "";
+
+var db = Main.indexedDB.db;
+
+var transProf = db.transaction(["Profile"], "readwrite");
+var storeProf = transProf.objectStore("Profile");
+
+var transAppo = db.transaction(["Appointments"], "readwrite");
+var storeAppo = transAppo.objectStore("Appointments");
+
+console.log("Stores and transactions created.");
+//////////////////////////////////////////////////////////////////
+var cursorRequestProf = storeProf.openCursor();
+cursorRequestProf.onsuccess = function(e) {
+var result = e.target.result;
+if(!!result == false)
+return;
+
+renderUser(result.value, 1);
+result.continue();
+};
+cursorRequestProf.onerror = Main.indexedDB.onerror;
+/////////////////////////////////////////////////////////////////
+var cursorRequestAppo = storeAppo.openCursor();
+cursorRequestAppo.onsuccess = function(e) {
+var result = e.target.result;
+if(!!result == false)
+return;
+
+renderUser(result.value, 2);
+result.continue();
+};
+cursorRequestAppo.onerror = Main.indexedDB.onerror;
+/////////////////////////////////////////////////////////////////
+console.log("Cursors complete.");
+
+
+
+}; //End-GetAllDetails
+
+function renderUser(row, column) {
+if(column == 1){
+var Users = document.getElementById("Profile");
+}
+else{
+var Users = document.getElementById("Appointments");
+}
+var li = document.createElement("li");
+
+var t = document.createTextNode(row.text);
+
+
+li.appendChild(t);
+
+Users.appendChild(li);
+};
+
+function deleteDetails(){
+var deleteIndex =  document.getElementById("DeleteNo");
+Main.indexedDB.deleteIndex(deleteIndex.value);
+Main.indexedDB.getAllDetails();
+};
+
+Main.indexedDB.deleteIndex = function(index){
+var db = Main.indexedDB.db;
+
+var transProf = db.transaction(["Profile"], "readwrite");
+var storeProf = transProf.objectStore("Profile");
+
+var transAppo = db.transaction(["Appointments"], "readwrite");
+var storeAppo = transAppo.objectStore("Appointments");
+
+var requestProf = storeProf.deleteIndex(index);
+requestProf.onsuccess = function(e) {
+console.log("Successful Prof delete");
+};
+
+requestProf.onerror = function(e) {
+console.log("Error Prof Deleting: ", e);
+};
+
+var requestAppo = storeAppo.deleteIndex(index);
+requestAppo.onsuccess = function(e) {
+console.log("Successful Appo delete");
+};
+
+requestAppo.onerror = function(e) {
+console.log("Error Appo Deleting: ", e);
+};
+
+};
+
+</script>

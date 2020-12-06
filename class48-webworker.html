@@ -1,0 +1,27 @@
+<html>
+	<script type="javascript/worker" src="dgWebworker.js"></script>
+	<body>
+		<input type="button" id="btnSend" value="Send"/> 
+	</body>
+</html>
+<script type="javascript/worker">
+
+</script>
+<script>
+let eSend=document.getElementById("btnSend")
+var ww
+eSend.addEventListener("click",function(){
+  
+  if (typeof(Worker)=="undefined")
+	alert("ww not defined")
+else
+	{
+		ww = new Worker("dgWebworker.js")
+		ww.postMessage("[html say hi, who are you ?]")
+		ww.addEventListener("message",repplymsg,false)
+	}
+})
+function repplymsg(event){
+   alert("html received: " + event.data)
+}
+</script>
