@@ -41,4 +41,10 @@ so funciona com crase:
 Parametros opcionais:
   function soma(var n1=0, var n2=0)
   se nao passar n2 assume zero
-  
+
+webpack 
+  distribuir
+
+babel
+  transpiler,  compilar para browsers antigos  
+

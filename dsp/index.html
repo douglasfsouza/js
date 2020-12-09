@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas</title>
+</head>
+<style>
+    #cab1{
+        background-color: aqua;
+    }
+    #det{
+        background-color: lightgrey;
+    }
+    #txtAno{
+        width: 100px;
+    }
+</style>
+<body>
+    <div id="cab1">
+        Ano
+        <input type="number" id="txtAno">
+        Mes
+        <select id="selMes">
+            <option value="1">Janeiro </option>
+            <option value="2">Fevereiro </option>
+            <option value="3">Março </option>
+            <option value="4">Abril </option>
+            <option value="5">Maio </option>
+            <option value="6">Junho </option>
+            <option value="7">Julho </option>
+            <option value="8">Agosto </option>
+            <option value="9">Setembro </option>
+            <option value="10">Outubro </option>
+            <option value="11">Novembro </option>
+            <option value="12">Dezembro </option>
+        </select>
+        
+
+        Tipo
+        <select>Tipo
+            <option value="d">Debito</option>
+            <option value="c">Credito</option>
+        </select>
+        <input type="button" value="Listar" id="btnListar">
+        <a href="incluir.html" > <input type="button" value="Incluir" id="btnIncluir"></a>
+        <input type="button" value="Excluir" id="btnExcluir">
+        <input type="button" value="Alterar" id="btnAlterar">
+    </div>
+    <div id="det">
+        <table>
+            
+            <tr> 
+                <td style="width: 50px;"> Sel</td>
+                <td style="width: 100px;"> Codigo</td>
+                <td style="width: 200px;"> Data </td>
+                <td style="width: 300px;"> Descricao</td>
+                <td style="width: 200px;"> Tipo</td>
+                <td style="width: 200px;"> Valor</td>
+            </tr>
+        
+            
+            <tr> 
+                <td><input type="checkbox" id="1"></td>
+                <td>1</td>
+                <td> 07-12-2020 </td>
+                <td> Internet</td>
+                <td> Debito</td>
+                <td> 89.90</td>
+            </tr>
+            <tr> 
+                <td><input type="checkbox" id="2"></td>
+                <td>2</td>
+                <td> 04-12-2020 </td>
+                <td> Ituran</td>
+                <td> Debito</td>
+                <td> 81.40</td>
+            </tr>
+            
+        </table>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    eExcluir = document.getElementById("btnExcluir")
+    eAlt = document.getElementById("btnAlterar")
+    var el = document.querySelectorAll("input[type='checkbox']")
+    eAlt.addEventListener("click",function(){        
+        
+        //alert(el.length)
+        let codigo = 0
+        for (i=0;i<el.length;i++){
+            if (el[i].checked)
+               codigo = el[i].id
+
+        }
+        if (codigo ==0 )
+           alert("Seleção invalida!!")
+        else{
+            window.location = `alterar.html?codigo=${codigo}`
+        
+        }
+        
+    })
+    eExcluir.addEventListener("click",function(){
+        let codigo = 0
+        for (i=0;i<el.length;i++){
+            if (el[i].checked)
+               codigo = el[i].id
+
+        }
+        if (codigo ==0 )
+           alert("Seleção invalida!!")
+        else{
+            var resp = confirm(`Confirma exclusao da despesa: ${codigo} ?`)
+            if (resp)
+                alert("Confirmado")
+            else
+                alert("Não confirmado")
+        
+        }
+    })
+    let eAno = document.getElementById("txtAno")
+    let data = new Date()
+    eAno.value = data.getFullYear()
+
+    let eMes = document.getElementById("selMes")
+
+    eMes.value = data.getMonth() + 1
+
+
+    
+</script>
