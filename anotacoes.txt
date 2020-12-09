@@ -55,3 +55,10 @@ Parametros opcionais:
   Alterar a pagina
   window.document.getElementsByTagName("p")[3].innerText="LINQ - Using the sintax of search, Doug wwas here"
   
+
+webpack 
+  distribuir
+
+babel
+  transpiler,  compilar para browsers antigos  
+
