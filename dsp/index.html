@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despesas</title>
 </head>
+<script type="text/javascript" src="dsp.js" asp-append-version="true"></script>
+//<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <style>
     #cab1{
         background-color: aqua;
@@ -83,7 +85,9 @@
     
 </body>
 </html>
+
 <script>
+    Listar()
     eExcluir = document.getElementById("btnExcluir")
     eAlt = document.getElementById("btnAlterar")
     var el = document.querySelectorAll("input[type='checkbox']")

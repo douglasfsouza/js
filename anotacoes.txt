@@ -15,7 +15,7 @@ para executar um arquivo .js:
             Run this file
             Botao run novamente para reiniciar com cmd
 
-typeof(variaval)
+typeof(variavel)
 typeof 'teste'
 typeof 2
 tipos:
