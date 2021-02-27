@@ -79,6 +79,8 @@ git revert <sha> para desfazer um checkin      - computador remoto
   precisa fazer um novo checkin
 git stash - para desfazer antes do checkin
 git reset HEAD~1 para desfazer o ultimo commit - computador local
+(enquanto ainda nao fez push, se nao volta a alteracao quando fazer pull,
+ou seja se ja  fez push, usar revert para desfazer)
 git rebase
 
 git show <commit> - ver o commit
