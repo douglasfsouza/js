@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    console.log("cidades")
+    //debugger
+    var cidade=[]
+    cidade.nome="Jandira"
+    cidade.bairro="Fatima"
+
+    var cidade2=[]
+    cidade2.nome="barueri"
+    cidade2.bairro="Silveira"
+
+    var cidades =[cidade, cidade2]
+    
+
+    //var cidades = ['jandira','jacupiranga']
+        
+    
+    cidades.forEach(function(c) {
+        console.log(`${c.nome}-${c.bairro}` )
+    })
+    
+    console.log("outra forma:")
+
+    cidades.forEach(c => {
+        console.log(`${c.nome}-${c.bairro}`)
+    })
+
+    
+</script>
