@@ -3,8 +3,19 @@ nodejs -> terminal js
 node exec -> para executar direto no node com f8
 se desabilitar o js da pagina perde recursos como preencher automatico,
 muda o layout da pagina. ex nao carrega tudo de uma vez,etc
+para executar um arquivo .js:
+  no prompt do dos
+     node  arquivo.js
+  ou no terminal mudando o shell para cmd
+     também dá para depurar, use run (Nodejs - preview)
+     Menu run 
+        Start debuging f5 - vai iniciar no shell padrão
+        Botao Run 
+            mudar o shell para cmd
+            Run this file
+            Botao run novamente para reiniciar com cmd
 
-typeof(variaval)
+typeof(variavel)
 typeof 'teste'
 typeof 2
 tipos:
@@ -41,6 +52,9 @@ so funciona com crase:
 Parametros opcionais:
   function soma(var n1=0, var n2=0)
   se nao passar n2 assume zero
+  Alterar a pagina
+  window.document.getElementsByTagName("p")[3].innerText="LINQ - Using the sintax of search, Doug wwas here"
+  
 
 webpack 
   distribuir
