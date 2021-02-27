@@ -70,6 +70,8 @@ git rm "arquivo" --cached (apenas remove da index)
 
 git stash save 
 git stash apply 0 (aplica a id 0)
+faz merge automatico ao aplicar,
+pode haver conflito, ira avisar
 
 git branch -a (lista todas)
 git checkout -b develop (cria de muda para develop)
