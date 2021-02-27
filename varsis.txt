@@ -1,1 +1,2 @@
 begin: varsis 31-01-20
+alterando apos stash
