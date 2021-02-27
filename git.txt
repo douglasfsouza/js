@@ -5,7 +5,7 @@ git config --global user.name "Douglas Ferreira"
 git config --globl user.email "douglas.ferreira@totvs.com.br"
 git push --set-upstream origin master (fazer upload do seu repositorio)
 git pull origin - funcionou
-gitignore - um arquivo informar arquivos para ignorar pois nao precisam subir 
+.gitignore - um arquivo p/ informar arquivos para ignorar, pois nao precisam subir 
 
 escopos:
 system
@@ -51,9 +51,8 @@ git stash apply
 git add
 git stash list
 
-stash - volta o codigo original salvando as alteracoes
+stash - guarda e volta o codigo original salvando as alteracoes
 index - para ver o que vai comitar
-
 
 git reset arquivo (para tirar o arquivo da index)
 git rm (tira e exclui o arquivo)
@@ -85,6 +84,7 @@ git show <commit> - ver o commit
 git log <arquivo> - ver as alteracoes no arquivo
 
 git merge --squash
+git merge --abort
 
 git help tutorial
 
