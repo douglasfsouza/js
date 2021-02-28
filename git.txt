@@ -126,4 +126,5 @@ git mergetool --tool vimdiff
   
 Erros:
   Erro com git clone, ao colar vem caracteres invalidos, digite o endereco
-
+  Arquivos grandes, tamanho maximo permitido pelo git = 100MB,
+    se fez commit, git rm <arq> --cached
