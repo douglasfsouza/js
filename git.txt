@@ -2,7 +2,7 @@ Conceito de repositorio distribuido
 
 git config --list
 git config --global user.name "Douglas Ferreira"
-git config --globl user.email "douglas.ferreira@totvs.com.br"
+git config --global user.email "douglas.ferreira@totvs.com.br"
 git push --set-upstream origin master (fazer upload do seu repositorio)
 git pull origin - funcionou
 .gitignore - um arquivo p/ informar arquivos para ignorar, pois nao precisam subir 
@@ -25,6 +25,8 @@ bom fazer pequenos commits
 
 operacoes remotas
   clone - tira uma copia do repositorio central
+    em caso de problema com senha, gerar credencial no site,
+    botao abaixo de clone
   ls-remote
   fetch (atualiza o repositorio local, nao funcionou)
     p/ funcionar precisa fazer o merge
@@ -128,3 +130,6 @@ Erros:
   Erro com git clone, ao colar vem caracteres invalidos, digite o endereco
   Arquivos grandes, tamanho maximo permitido pelo git = 100MB,
     se fez commit, git rm <arq> --cached
+  Erro com git clone, em caso de problema com senha, gerar credencial no site,
+  botao abaixo de clone
+

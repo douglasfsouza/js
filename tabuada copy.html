@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabuada</title>
+    <style>
+        input{
+            width: 60px;
+            text-align: center;
+        }
+        div#ta{
+            border: yellow;
+            background-color: teal;
+            color: thistle;
+            width: 260px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    Informe a Tabuada: <input type="number" id="txttab" value=5>
+    <input type="button" value="Calcular" onclick="gerartab()">
+    <div id=ta>
+
+    </div>
+    <script>
+        function gerartab(){
+            var r = window.document.getElementById("ta")
+            var t =window.document.getElementById("txttab")
+            var nt = Number(t.value)
+            var c=0
+            var tc = 0
+            r.innerHTML=null
+            while(++c<11){
+                tc = c * nt
+                r.innerHTML += `<p> ${nt} X ${c} = ${tc} </p>`
+                 
+            }
+        }
+    </script>  
+</body>
+</html>
