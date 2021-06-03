@@ -133,3 +133,10 @@ Erros:
   Erro com git clone, em caso de problema com senha, gerar credencial no site,
   botao abaixo de clone
 
+Autenticacao 2FA - 2 fatores
+para acessar o repositorio
+  ira pedir o token, usar app TOTP Autenticador
+para fazer push
+  user.name=douglasfsouza
+  user.password = token_gerado_pelo_site armezenado localmente
+git config credential.helper store -> para armazenar e lembrar usr e senha
