@@ -70,6 +70,7 @@ git add --all (comita todos os arquivos da index)
 
 git rm "arquivo" --cached (apenas remove da index)
 
+git stash save test --include-untracked
 git stash save 
 git stash apply 0 (aplica a id 0)
 faz merge automatico ao aplicar,
@@ -79,7 +80,7 @@ git branch -a (lista todas)
 git checkout -b develop (cria de muda para develop)
 git branch develop (cria branch develop)
 
-git revert <sha> para desfazer um checkin      - computador remoto
+e e <sha> para desfazer um checkin      - computador remoto
   precisa fazer um novo checkin
 git stash - para desfazer antes do checkin
 git reset HEAD~1 para desfazer o ultimo commit - computador local
