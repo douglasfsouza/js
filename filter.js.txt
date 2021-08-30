@@ -1,0 +1,15 @@
+var fruits=[];
+fruits.push({name:"avocado"});
+fruits.push({name:"banana"});
+fruits.push({name:"starfruit"});
+
+var star = fruits.filter((f) => {return f.name == "starfruit"});
+
+console.log(star.length);
+fruits.pop();
+
+var star = fruits.filter((f) => {return f.name == "starfruit"});
+console.log(star.length);
+
+
+
