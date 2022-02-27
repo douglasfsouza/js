@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only call with &&</title>
+</head>
+<body>
+    <input type="button" value="Call" onclick="onCall()"/>
+</body>
+</html>
+<script>
+    function onCall(){
+        //let b = true;
+
+        call1() && onCall2();
+        alert("Se a primeira chamada retornar true então chama a segunda");
+
+    }
+    function onCall2(){
+        alert("Chegou em call 2");
+    }
+
+    function call1(){
+        return true;
+    }
+</script>
