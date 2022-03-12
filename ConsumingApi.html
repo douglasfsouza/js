@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumindo a api com XMLHTTPRequest</title>
+</head>
+<body>
+    <input type="button" value="Cliente" onclick="onClickCliente()">
+    
+</body>
+</html>
+
+<script>
+    function onClickCliente(){
+        let url = 'http://localhost:61986/getCliente';
+        var oReq = new XMLHttpRequest();
+        oReq.open("get",url,true);
+        oReq.onload=function(e) {
+            alert(oReq.response);
+        }
+        oReq.send();
+        
+    }
+</script>
