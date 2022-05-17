@@ -1,0 +1,26 @@
+ <html>
+     <header>
+         <h1>Operador Spread</h1>
+     </header>
+     <body>
+         <button onclick="spread()"> Spread</button>
+     </body>
+     <script>
+         function spread(){
+             let a1 = [1,2,3];            
+             let a2 = [...a1,4,5,6]
+             a2.forEach((x)=>{
+                 alert(x);
+             })
+             
+             //outro exemplo
+	    let pessoa = {nome: 'Douglas',
+	                  idade: '45'};
+	    let pessoaAno = {...pessoa,ano:2022};
+	    alert(pessoaAno.ano);
+
+         }
+     </script>
+ </html>
+ 
+ 

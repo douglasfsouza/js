@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <h1>Rest Operator</h1>
+    </head>
+    <body>
+        <button onClick="rest()">Rest Operator</button>
+    </body>
+    <script>
+        function rest(){
+            family('Douglas','Andreia', 'Suzanne','Matheus', 'Nicolas')
+
+        }
+        function family(...nomes){
+            nomes.forEach(x => {
+                alert(x);                
+            })
+
+        }
+    </script>
+</html>
