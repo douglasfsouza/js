@@ -49,6 +49,12 @@ var vel = 60.6
 so funciona com crase:
 `the velocity is ${vel} `
 
+var x = !!user;
+ converte para boolean.
+   ex. se user = 'douglas' retorna true
+       se user = null  retorna false
+
+
 Parametros opcionais:
   function soma(var n1=0, var n2=0)
   se nao passar n2 assume zero

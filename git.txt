@@ -1,4 +1,5 @@
 Conceito de repositorio distribuido
+Conceito de repositorio distribuido
 
 git config --list
 git config --global user.name "Douglas Ferreira"
@@ -87,6 +88,32 @@ git reset HEAD~1 para desfazer o ultimo commit - computador local
 (enquanto ainda nao fez push, se nao volta a alteracao quando fazer pull,
 ou seja se ja  fez push, usar revert para desfazer)
 git rebase
+    o rebase é o seguinte.... 
+	o git "tira" o seu commit, 
+	faz um pull da branch que vc informa... 
+	e depois tenta aplicar as suas alterações sobre a última versão...
+	steps:
+	    go to your branch
+		make commit, but not push (TESTANDO FAZENDO PUSH ESTÁ MELHOR, SEM CONFLITOS ATE AGORA ..)
+	    go to master branch
+		git pull
+	    go to your feature branch
+		git fetch
+		git rebase -i origin/master
+		it will open the editor and remove all commits that are NOT yours
+		   then close the editor
+		if there are conflicts, fix it manually, save and commit it
+		git rebase -- continue 
+		#important, don’t do any git pull to merge from remote
+		git push -- force-with-lease (overwrite the remote even there is divergent)
+		
+		Apos o rebase:
+		   pode seguir alterando na sua branch, 
+		   fazendo commits normalmente (sem push).... 
+		   e antes de fazer o push, faz um rebase, ajusta os conflitos 
+		   e ai faz um push já atualizado com a master....
+		   
+
 
 git show <commit> - ver o commit
 git log <arquivo> - ver as alteracoes no arquivo
@@ -141,3 +168,13 @@ para fazer push
   user.name=douglasfsouza
   user.password = token_gerado_pelo_site armezenado localmente
 git config credential.helper store -> para armazenar e lembrar usr e senha
+
+Submodulos:
+   clonar o projeto fora de s3rial.www.srm
+   entrar no srm:
+     editar o arquivo .gitmodules
+     git submodule init
+     git submodule update
+	 git submodule foreach "git pull"
+	 no caso do s3rial.www.legacy, 
+	     não cria a sub pasta, mas usa como um recurso
