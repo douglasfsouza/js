@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>matrix</title>
+    <title>The hills have eyes</title>
     <link rel="stylesheet" href="movies.css"/>
     <script type="text/javascript" src="movies.js"></script>
 </head>
 <body>
-    <video id="movie"
-            src="matrix4" 
-            width = "400" 
-            height = "500"
-            controls="controls"
-            poster="matrix4.jpeg"            
-            onplay="onPlay()"           
-            > 
-    </video>    
+    <video controls preload="auto" style="width:800px;" height="500px"
+        poster="theBadGuys.jpeg"
+        data-setup='{"controls":true}'>
+            <source src="theBadGuys" type="video/mp4"/>
+    </video>
+     
 </body>
 </html>
