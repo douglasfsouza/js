@@ -54,10 +54,15 @@ git stash apply
 git add
 git stash list
 
+outra forma
+git stash -> para salvar
+git stash pop -> para retornar
+
 stash - guarda e volta o codigo original salvando as alteracoes
 index - para ver o que vai comitar
 
 git reset arquivo (para tirar o arquivo da index)
+git reset --hard  -> para desfazer todas as alteracoes
 git rm (tira e exclui o arquivo)
 
 git clean - para desfazer a alteração nao confirmada, nao funcionou,
