@@ -15,6 +15,8 @@ local
 
 git remote -v (para ver os repostitorios)
 
+git commit --amend -m "nova mensagem de commit"
+
 ssh-keygen (gera chaves)
 bitbucket (site de repositorios)
 gitlab tambem
