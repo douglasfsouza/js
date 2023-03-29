@@ -70,8 +70,11 @@ git rm (tira e exclui o arquivo)
 git clean - para desfazer a alteração nao confirmada, nao funcionou,
 so funciona com arquivos novos,
 para desfazer uma alteração nao confirmada:
+  arquivo novo que ainda nao esta na index, so excluir: rm arquivo
+  arquivo novo ou ja existente ja adicionado na index, retirar da index com git git reset arquivo
+  se ja existente, restaurar com git restore arquivo 
+  se novo excluir com rm
   git rm arquivo -f
-  git pull - nao trouxe o arquivo devolta, excluir a branch..
   git restore <file> - para descartar as alteraçoes
 ou git checkout -- <file> - depende da versao do git
 git add --all (comita todos os arquivos da index)

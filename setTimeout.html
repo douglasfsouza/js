@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<button onClick="onSetTimeoutClick()" >setTimeOut </button>
+	</body>
+</html>
+<script>
+	function onSetTimeoutClick(){
+		alert("Receberá outro alerta em 5s");
+		myTimeout = setTimeout(myFunc,5000);
+	}
+
+	function myFunc(){
+		alert("Passou 5 segundos");
+	}
+
+</script>
