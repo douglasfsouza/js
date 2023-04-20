@@ -182,7 +182,8 @@ git config credential.helper store -> para armazenar e lembrar usr e senha
 Submodulos:
    clonar o projeto fora de s3rial.www.srm
    entrar no srm:
-     editar o arquivo .gitmodules
+     p/ editar o arquivo .gitmodules:
+	     git submodule add ../s3rial.www.seuprojeto
      git submodule init
      git submodule update
 	 git submodule foreach "git pull"

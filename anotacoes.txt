@@ -48,6 +48,10 @@ teste ? true : false
 var vel = 60.6
 so funciona com crase:
 `the velocity is ${vel} `
+******************
+Verificar valores unicos no array:
+const groupIds = [... new Set(selectedRows.map(x => x.getProperty("U_GROUPID")))];
+*****************
 
 var x = !!user;
  converte para boolean.
