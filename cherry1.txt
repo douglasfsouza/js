@@ -1,0 +1,3 @@
+primeiro commit para teste de cherry-pick
+sintaxe:
+git cherry-pick<commit>
