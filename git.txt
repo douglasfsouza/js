@@ -1,5 +1,4 @@
 Conceito de repositorio distribuido
-Conceito de repositorio distribuido
 
 git config --list
 git config --global user.name "Douglas Ferreira"
@@ -7,6 +6,8 @@ git config --global user.email "douglas.ferreira@totvs.com.br"
 git push --set-upstream origin master (fazer upload do seu repositorio)
 git pull origin - funcionou
 .gitignore - um arquivo p/ informar arquivos para ignorar, pois nao precisam subir 
+
+git blame <arquivo> -> mostra o histórico de quem alterou o arquivo
 
 escopos:
 system
@@ -90,6 +91,7 @@ pode haver conflito, ira avisar
 git branch -a (lista todas)
 git checkout -b develop (cria de muda para develop)
 git branch develop (cria branch develop)
+git branch -m <novo_nome> p/ renomear a branch
 
 e e <sha> para desfazer um checkin      - computador remoto
   precisa fazer um novo checkin
@@ -122,8 +124,6 @@ git rebase
 		   fazendo commits normalmente (sem push).... 
 		   e antes de fazer o push, faz um rebase, ajusta os conflitos 
 		   e ai faz um push já atualizado com a master....
-		   
-
 
 git show <commit> - ver o commit
 git log <arquivo> - ver as alteracoes no arquivo

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de classe em javascript</title>
+</head>
+<body>
+    <button onclick="AdicionarAluno()">Adicionar</button>    
+    <button onclick="MostrarAlunos()">Mostrar todos</button>    
+    <button onclick="MostrarAcimaDaMedia()">Mostrar alunos acima da média</button>    
+    <button onclick="Estudar(1)">Estudar</button>    
+    <div id="divAlunos"></div>
+</body>
+</html>
+<script>
+    function AdicionarAluno(){
+        Adicionar("douglas", "douglasfs2014@gmail.com", 10);
+        alunos[0].nivel = 0;
+        Adicionar("andreia", "deya_feliz@gmail.com", 5);
+        alunos[1].nivel = 0;
+       
+        console.log(alunos[0].email);
+        console.log("Tamanho:" + alunos.length);
+    }
+
+    function MostrarAlunos(){
+        ImprimirAlunos(alunos);
+        
+    }
+
+    function MostrarAcimaDaMedia(){
+        AcimaDaMedia();
+    }
+
+    
+
+</script>
+<script src="Aluno.js"></script>
