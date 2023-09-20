@@ -16,6 +16,8 @@ local
 
 git remote -v (para ver os repostitorios)
 
+alterar/corrigir a mensagem de observacao do commit:
+
 git commit --amend -m "nova mensagem de commit"
 
 ssh-keygen (gera chaves)
