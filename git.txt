@@ -21,6 +21,8 @@ alterar/corrigir a mensagem de observacao do commit:
 git commit --amend -m "nova mensagem de commit"
 
 ssh-keygen (gera chaves)
+   ao iniciar com o git em outra máquina é necessário configurar a url para que não use a conta do usuário anterior se for o caso
+   ex: git remote set-url origin git@github.com:douglasfsouza/html.git
 bitbucket (site de repositorios)
 gitlab tambem
 azure devops tambem
@@ -69,6 +71,7 @@ index - para ver o que vai comitar
 git reset arquivo (para tirar o arquivo da index)
 git reset --hard  -> para desfazer todas as alteracoes
 git rm (tira e exclui o arquivo)
+git reset -> para limpar todos os arquivos da stage
 
 git clean - para desfazer a alteração nao confirmada, nao funcionou,
 so funciona com arquivos novos,
@@ -83,6 +86,8 @@ ou git checkout -- <file> - depende da versao do git
 git add --all (comita todos os arquivos da index)
 
 git rm "arquivo" --cached (apenas remove da index)
+
+git clean -n (para limpar todos os caches)
 
 git stash save test --include-untracked
 git stash save 
@@ -172,6 +177,9 @@ Erros:
     se fez commit, git rm <arq> --cached
   Erro com git clone, em caso de problema com senha, gerar credencial no site,
   botao abaixo de clone
+  Erro ao tentar fazer commit com arquivos grandes, acima 100mb.
+     Necessario desfazer o commit, excluir os arquivos grandes e subir o commit novamente
+	 
 
 Autenticacao 2FA - 2 fatores
 para acessar o repositorio
@@ -193,7 +201,10 @@ Submodulos:
    clonar o projeto fora de s3rial.www.srm
    entrar no srm:
      p/ editar o arquivo .gitmodules:
-	     git submodule add ../s3rial.www.seuprojeto
+	     git submodule add ../s3rial.www.seuprojeto (errado)
+		 git submodule add https://marcelo-cuin@dev.azure.com/marcelo-cuin/S3RIAL/_git/s3rial.www.distribution
+		 MAS NÃO ADICIONA AUTOMATICAMENTE EM UI5.YAML, preciSA incluir manualmente
+
      git submodule init
      git submodule update
 	 git submodule foreach "git pull"
