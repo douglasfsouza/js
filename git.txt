@@ -210,3 +210,5 @@ Submodulos:
 	 git submodule foreach "git pull"
 	 no caso do s3rial.www.legacy, 
 	     não cria a sub pasta, mas usa como um recurso
+		 
+git cherry-pick <commitId>		 
