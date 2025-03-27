@@ -37,9 +37,15 @@ operacoes remotas
     botao abaixo de clone
   ls-remote
   fetch (atualiza o repositorio local, nao funcionou)
+     O fetch apenas atualiza as referencias remotas, é util quando precisa saber quais commits serão baixados então para completar precisa fazer o merge ou rebase
+	 Ja pull faz o fetch automaticamente assim como faz o merge tambem
+	 
     p/ funcionar precisa fazer o merge
     ex. git fetch --all
         git merge
+	outro ex:
+	   git fetch
+	   git diff HEAD origin/main (para ver o que sera baixado)
   pull(atualiza o repositorio e a area de trabalho fazendo merge)
      ex. git pull origin master
   push (check-in)
@@ -151,10 +157,14 @@ try.github.io
 github.com/globocom
 github.com/loiane
 
-Excluir uma branch
+Excluir uma branch local
 git branch -d <nome>
 
-fork - uma copia do repositorio
+Excluir uma branch remota
+ git push origin --delete <nome da branh>
+
+
+fork - uma copia do repositorio, para fazer commits na sua conta e nao na original
 
 git diff id1..id2
 id1 - informar a mais antiga
