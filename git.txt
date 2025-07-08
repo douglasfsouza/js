@@ -26,6 +26,7 @@ ssh-keygen (gera chaves)
 bitbucket (site de repositorios)
 gitlab tambem
 azure devops tambem
+gitk  -> Ver as alteracoes de forma grafica
 
 tag usado para indicar a versao
 
@@ -46,6 +47,11 @@ operacoes remotas
 	outro ex:
 	   git fetch
 	   git diff HEAD origin/main (para ver o que sera baixado)
+	   git log HEAD..origin/main --oneline (para ver os commits novos)
+	
+	Procurar um commit que alterou uma linha:
+	  git log -S "texto da linha" arquivo.txt
+	  
   pull(atualiza o repositorio e a area de trabalho fazendo merge)
      ex. git pull origin master
   push (check-in)
@@ -66,6 +72,7 @@ git pull
 git stash apply
 git add
 git stash list
+git diff-files -c (para ver as alteracoes antes de adicionar na index, util quando poucos arquivos alterados)
 
 outra forma
 git stash -> para salvar
@@ -185,6 +192,15 @@ Erros:
   Erro com git clone, ao colar vem caracteres invalidos, digite o endereco
   Arquivos grandes, tamanho maximo permitido pelo git = 100MB,
     se fez commit, git rm <arq> --cached
+	ou:
+	  - desfazer o commit:
+	     git reset HEAD~1
+      - adicionar o arquivo no .gitignore *.apk
+	  - adicionar os arquivos novamente
+	      add .
+	  - comitar
+      - fazer push  	  	  
+   	  
   Erro com git clone, em caso de problema com senha, gerar credencial no site,
   botao abaixo de clone
   Erro ao tentar fazer commit com arquivos grandes, acima 100mb.
